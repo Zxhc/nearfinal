@@ -1,0 +1,134 @@
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+}
+
+.modal-content {
+  background-color: white;
+  margin: 5% auto;
+  padding: 30px;
+  border-radius: 12px;
+  width: 80%;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+.inventory-container h2 {
+  margin-bottom: 20px;
+}
+.modal.show {
+  display: block !important;
+}
+.inventory-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: initial;
+}
+
+.inventory-table thead {
+  background: linear-gradient(to left, #cb4c50, #ff0000, #ed0505);
+  color: white;
+}
+
+.inventory-table th,
+.inventory-table td {
+  padding: 14px 15px;
+  text-align: left;
+}
+
+.inventory-table tbody tr {
+  border-bottom: 1px solid #eee;
+}
+
+.inventory-table tbody tr:hover {
+  background-color: #f1f5f9;
+}
+
+button.opnbtn {
+  height: 40px;
+  padding: 0 15px;
+  background: var(--primary-color);
+  color: white;
+  font-weight: 300;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form-container {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.form-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.pop-input {
+  width: 160px;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.form-group button[name="addItem"] {
+  flex-shrink: 0;
+  align-self: center;
+}
+
+.add-btn {
+  height: 37px;
+  padding: 0 15px;
+  background: var(--primary-color);
+  color: white;
+  font-weight: 300;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.qr-btn-container {
+  height: 32px;
+  padding: 0 20px;
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.qr-btn-container span {
+  color: #ffffff;
+}
+
+.qr-btn-container:hover {
+  opacity: 0.8;
+}
+.modal-func {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  background: #fff;
+  padding: 10px 0;
+}

@@ -1,0 +1,92 @@
+.ubuntu-fab-container {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.ubuntu-launcher {
+  width: 54px;
+  height: 54px;
+  background: #0d1b2a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: #ffffff; /* White dots */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+}
+
+.ubuntu-launcher .material-symbols-rounded {
+  font-size: 30px;
+  font-variation-settings: "FILL" 1;
+}
+
+.ubuntu-launcher:hover {
+  background: #1b263b;
+  transform: scale(1.05);
+}
+
+/* Menu Styling */
+.ubuntu-menu {
+  display: none;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ubuntu-menu.active {
+  display: flex;
+  animation: fadeInOut 0.2s ease-out;
+}
+
+.ubuntu-item {
+  background: #1b263b;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 12px 18px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  min-width: 170px;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+.ubuntu-item .material-symbols-rounded {
+  font-size: 20px;
+  color: #ffffff;
+}
+
+.ubuntu-item:hover {
+  background: #2c3e50;
+}
+
+@keyframes fadeInOut {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.secondary-header {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+@media (max-width: 768px) {
+    .ubuntu-fab-container {
+        display: none !important;
+    }
+}

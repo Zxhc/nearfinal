@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JIG IMS | Documentation Hub</title>
+    <style>
+        /* RESET & BASE STYLES */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            padding: 20px; 
+            background: #f4f4f4; 
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            color: #333;
+        }
+
+        /* MAIN CONTAINER */
+        .container { 
+            width: 100%;
+            max-width: 1200px; 
+            margin: 0 auto; 
+            background: white; 
+            padding: 30px; 
+            border-radius: 12px; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            flex: 1;
+        }
+
+        h2 { 
+            border-bottom: 3px solid #007bff; 
+            padding-bottom: 12px; 
+            margin-bottom: 25px;
+            font-size: 1.5rem;
+            color: #222;
+        }
+        
+        /* GRID SYSTEM */
+        #file-list { 
+            list-style: none; 
+            display: grid; 
+            /* Desktop: Auto-fill columns | Mobile: 1 column via media query */
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); 
+            gap: 15px; 
+        }
+
+        .file-item { 
+            display: flex; 
+            align-items: center; 
+            padding: 15px; 
+            border: 1px solid #eee; 
+            border-radius: 8px; 
+            text-decoration: none; 
+            color: #333; 
+            transition: all 0.3s ease; 
+            background: #fff;
+        }
+
+        .file-item:hover { 
+            background: #f0f7ff; 
+            border-color: #007bff; 
+            transform: translateY(-3px);
+            box-shadow: 0 4px 10px rgba(0,123,255,0.1);
+        }
+
+        .file-icon { 
+            margin-right: 15px; 
+            font-size: 30px; 
+        }
+
+        .file-info strong {
+            display: block;
+            font-size: 1rem;
+            margin-bottom: 2px;
+        }
+
+        .file-info small { 
+            color: #777; 
+            font-size: 0.8rem;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 25px 0;
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* MOBILE VIEW OPTIMIZATION */
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            .container { padding: 20px; border-radius: 0; }
+            h2 { font-size: 1.2rem; }
+            #file-list { grid-template-columns: 1fr; } /* Force 1 column on small screens */
+            .file-item:hover { transform: none; } /* Disable hover lift on touch devices */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Project Manuals</h2>
+    <ul id="file-list">
+        </ul>
+</div>
+
+<footer>
+    &copy; 2026 <strong>JIG IMS</strong><br>
+    <small>Developed by Elijah Boon & Chaz Honrada</small>
+</footer>
+
+<script>
+    const myFiles = [
+        "JIG IMS User Manual.pdf",
+        "Technical Documentation.pdf",
+    ];
+
+    const listContainer = document.getElementById('file-list');
+
+    (() => {
+        if (myFiles.length === 0) {
+            listContainer.innerHTML = '<p style="color: #999;">No documents found.</p>';
+            return;
+        }
+
+        myFiles.forEach(fileName => {
+            const li = document.createElement('li');
+            li.innerHTML = `
+                <a href="manuals/${fileName}" target="_blank" class="file-item">
+                    <span class="file-icon">📕</span>
+                    <div class="file-info">
+                        <strong>${fileName}</strong>
+                        <small>Tap to view document</small>
+                    </div>
+                </a>
+            `;
+            listContainer.appendChild(li);
+        });
+    })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+.month-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 25px;
+}
+
+.month-tab {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  background: #f1f5f9;
+  color: #64748b;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 13px;
+  transition: 0.2s;
+}
+
+.month-tab.active {
+  background: #2563eb;
+  color: white;
+}
+
+.no-data-wrapper {
+  text-align: center;
+  padding: 80px 20px;
+  background: #ffffff;
+  border-radius: 16px;
+  border: 2px dashed #e2e8f0;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .month-tabs {
+    gap: 10px;
+    margin-bottom: 20px;
+    overflow-x: auto;
+    padding: 5px 2px 15px 2px; 
+    -webkit-overflow-scrolling: touch; 
+    display: flex;
+    flex-wrap: nowrap; 
+  }
+
+  .month-tab {
+    flex: 0 0 auto; 
+    min-width: 90px; 
+    padding: 12px 15px;
+    font-size: 14px;
+  }
+
+  .month-tabs::-webkit-scrollbar {
+    display: none;
+  } 
+  .month-tabs {
+    -ms-overflow-style: none;  
+    scrollbar-width: none;  
+  }
+
+  .no-data-wrapper {
+    padding: 40px 20px; 
+    margin-top: 15px;
+    gap: 12px;
+  }
+
+  .no-data-wrapper span.material-symbols-outlined {
+    font-size: 50px; 
+  }
+
+  .no-data-wrapper h3 {
+    font-size: 1.1rem;
+    line-height: 1.4;
+  }
+
+  #openBtnEmpty {
+    width: 100%; 
+    max-width: 280px;
+    height: 45px;
+    font-size: 14px;
+  }
+}

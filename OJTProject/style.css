@@ -1,0 +1,339 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+:root {
+ 
+  --primary-color: linear-gradient(145deg, #000c18, #001f3f);
+  --background-color: rgb(216, 204, 204);
+  --accent-slate: #334155;
+  --main-white: #ffffff;
+  --app-bg: #f8f9fa;
+  --inv-main-bg: #ffffff;
+  --inv-border: #e2e8f0;
+  --inv-search-bg: #f1f5f9;
+  --grand-total-bg: #f8fafc;
+  --grand-total-border: #2563eb;
+  --text-muted: #64748b;
+  --text-dark: #1e293b;
+  --excel-green: #185c37;
+  --btn-dark: #0f172a;
+  --danger-red: #ed0505;
+
+ 
+  --tab-hover-bg: rgba(37, 99, 235, 0.05);
+  --tab-hover-text: rgb(197, 211, 0);
+  --primary-blue-solid: #2563eb; 
+  --primary-blue-dark: #1d4ed8; 
+  --fab-main-bg: #1e40af; 
+  --danger-alt: #ef4444; 
+  --modal-overlay: rgba(0, 0, 0, 0.5);
+}
+
+
+html,
+body {
+  max-height: 80vh;
+  width: 100%;
+  background-color: var(--primary-color);
+}
+.login-container {
+  background: var(--app-bg); /* updated variable */
+
+  background-image: radial-gradient(#d32f2f 0.5px, transparent 0.5px);
+  background-size: 30px 30px;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-wrapper {
+  display: flex;
+  width: 900px;
+  height: 550px;
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+}
+
+.brand-side {
+  flex: 1;
+  background: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  padding: 40px;
+  position: relative;
+}
+
+.brand-side h1 {
+  font-size: 3rem;
+  letter-spacing: 5px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.brand-side p {
+  font-size: 1rem;
+  opacity: 0.8;
+  margin-top: 10px;
+}
+
+/* Binago ang class name dito */
+.brand-icon-fade {
+  font-size: 150px;
+  position: absolute;
+  opacity: 0.1;
+  bottom: -20px;
+  right: -20px;
+  transform: rotate(-20deg);
+}
+
+.form-side {
+  flex: 1.2;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form-header {
+  margin-bottom: 40px;
+}
+
+.form-header h2 {
+  font-size: 28px;
+  color: #333;
+}
+
+.input-box {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.input-box span {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #aaa;
+  font-size: 20px;
+}
+
+.input-box input {
+  width: 100%;
+  padding: 15px 15px 15px 50px;
+  border: 2px solid #f0f0f0;
+  border-radius: 12px;
+  outline: none;
+  transition: 0.3s;
+  font-size: 16px;
+}
+
+.input-box input:focus {
+  border-color: var(--primary-color);
+  background: #fffafa;
+}
+
+.login-btn {
+  width: 100%;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 16px;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: 0.3s;
+}
+
+.login-btn:hover {
+  background: var(--primary-color);
+  box-shadow: 0 10px 20px rgba(211, 47, 47, 0.3);
+  transform: translateY(-2px);
+}
+
+.login-btn:active {
+  transform: translateY(0);
+}
+
+.form-footer {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 14px;
+  color: #888;
+}
+
+.form-footer a {
+  color: var(--accent-slate); /* updated variable */
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.logo-index{
+  width: 10px;
+}
+
+.hide-on-mobile {
+    display: flex !important; /* Kasi excel-btn uses flex */
+}
+
+.mobile-logo,
+.mobile-text {
+    display: none; /* Tago muna by default */
+}
+
+.desktop-text {
+    color: #999;
+    display: block;
+}
+
+/* --- LOGIN MOBILE VIEW (768px and below) --- */
+@media (max-width: 768px) {
+
+  .login-container {
+    background: var(--primary-color);
+  }
+
+  .login-wrapper{
+    background: rgba(0, 0, 0, 0.292) !important; /* 50% Opacity White */
+  }
+  .hide-on-mobile {
+        display: none !important;
+    }
+
+    .login-container {
+        padding: 15px; /* Dagdag space sa paligid */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+    }
+
+    .login-wrapper {
+        flex-direction: column;
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+
+        /* OPTION 1: CLEAN GLASS TIMPLA */
+        background: rgba(255, 255, 255, 0.15) !important; 
+        backdrop-filter: blur(15px) saturate(150%);
+        -webkit-backdrop-filter: blur(15px) saturate(150%);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    /* Brand Side Adjustment */
+    .brand-side {
+        padding: 30px 20px;
+        text-align: center;
+        width: 100% !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+    .brand-side img {
+        width: 60px !important; /* Bahagyang paliitin ang logo */
+    }
+
+    .brand-side p {
+        font-size: 1rem;
+        margin-top: 10px;
+    }
+
+    /* Form Side Adjustment */
+    .form-side {
+        padding: 30px 25px;
+        width: 100% !important;
+        background: transparent !important;
+    }
+
+    .form-header h2 {
+        font-size: 1.5rem;
+        text-align: center;
+        color: #ffffff;
+        
+    }
+
+    .form-header p {
+        text-align: center;
+        font-size: 0.9rem;
+    }
+
+    /* Input Boxes - Gawing touch-friendly */
+    /* Ilagay mo 'to sa loob ng @media (max-width: 768px) block mo */
+
+    .input-box {
+        margin-bottom: 20px; /* Mas compact konti sa mobile */
+    }
+
+    .input-box span {
+        color: rgba(255, 255, 255, 0.7) !important; /* Puti na medyo transparent ang icon */
+    }
+
+    .input-box input {
+        background: rgba(255, 255, 255, 0.1) !important; /* Transparent white background */
+        border: 1px solid rgba(255, 255, 255, 0.2) !important; /* Manipis na border para sa glass look */
+        color: #ffffff !important; /* Puti ang text para mabasa */
+        border-radius: 12px;
+        padding: 15px 15px 15px 50px;
+    }
+
+    .input-box input::placeholder {
+        color: rgba(255, 255, 255, 0.5); /* Malabo na placeholder para malinis */
+    }
+
+    .input-box input:focus {
+        background: rgba(255, 255, 255, 0.2) !important; /* Lilitaw lalo pag cliniclick */
+        border-color: rgba(255, 255, 255, 0.5) !important; 
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* Konting glow */
+    }
+
+    .login-btn {
+        width: 100%;
+        height: 50px;
+        font-size: 1rem;
+        margin-top: 10px;
+    }
+
+    /* Error Message Box */
+    .error-msg {
+        font-size: 0.8rem;
+        padding: 8px;
+    }
+
+    .desktop-text {
+        display: none !important;
+    }
+
+    /* Ipapakita ang Welcome to JIG IMS */
+    .mobile-text {
+        display: block !important;
+        color: rgba(255, 255, 255, 0.7); /* Puti/Transparent para sa glass theme mo */
+        text-align: center;
+        font-size: 0.9rem;
+    }
+
+    .mobile-logo {
+      display: block !important;
+      margin-left: auto;
+      margin-right: auto;
+    }
+}

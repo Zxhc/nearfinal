@@ -1,0 +1,113 @@
+.item-group-wrapper {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+.item-title {
+    color: #007bff;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+.inventory-table tbody tr:hover {
+    background-color: #f8f9fa;
+}
+.status-badge {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    background: #e9ecef;
+}
+.td-date {
+    color: #2c3e50;
+    font-weight: 500;
+    white-space: nowrap;
+}
+.inventory-table thead th {
+    position: sticky;
+    top: 0;
+    background: #fff;
+    z-index: 5;
+    box-shadow: 0 2px 2px -1px rgba(0,0,0,0.1);
+}
+.btnContainer {
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    gap: 15px; 
+    flex-wrap: wrap; 
+}
+.search-box {
+    margin-bottom: 0 !important; 
+    display: flex;
+    align-items: center;
+    background: #f1f3f4;
+    padding: 5px 15px;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+}
+.search-box input {
+    border: none;
+    background: transparent;
+    outline: none;
+    padding: 5px;
+    margin-left: 5px;
+    width: 200px;
+}
+.history-checkbox, .group-select-all {
+    width: 11px;
+    height: 11px;
+    cursor: pointer;
+    accent-color: #007bff;
+}
+
+.inv-header {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    margin-bottom: 20px;
+}
+.header-title {
+    margin: 0; 
+    color: #2c3e50;
+}
+.header-subtitle {
+    color: #666; 
+    font-size: 0.95rem; 
+    margin-top: 5px;
+}
+.selected-date-span {
+    color: #007bff; 
+    font-weight: 600;
+}
+.excel-btn {
+    display: flex; 
+    align-items: center; 
+    gap: 8px;
+}
+.table-wrapper {
+    max-height: 80vh; 
+    overflow-y: auto; 
+    border-radius: 8px;
+}
+.na-text {
+    color: #ccc;
+}
+.no-records-wrapper {
+    text-align: center; 
+    padding: 60px 0;
+}
+.no-records-icon {
+    font-size: 64px; 
+    color: #ccc;
+}
+.no-records-text {
+    margin-top: 15px; 
+    font-weight: 400;
+}

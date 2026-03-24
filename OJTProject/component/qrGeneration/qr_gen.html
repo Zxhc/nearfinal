@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inventory QR Generator</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <style>
+        body { font-family: sans-serif; text-align: center; background: #f9f9f9; }
+        .grid { display: flex; flex-wrap: wrap; justify-content: center; }
+        .qr-card {
+            background: #fff;
+            border: 2px solid #333;
+            padding: 15px;
+            margin: 10px;
+            border-radius: 10px;
+        }
+        .id-label { margin-top: 10px; font-weight: bold; font-size: 1.2em; }
+    </style>
+</head>
+<body>
+
+    <h1>📦 Inventory QR Codes</h1>
+    <button onclick="window.print()" style="padding: 10px 20px; cursor:pointer;">Print All QR Codes</button>
+    
+    <div id="qr-container" class="grid">
+        </div>
+
+    <script>
+        // Kunin ang IDs mula sa bagong PHP file
+        fetch('qr_gen.php')
+            .then(res => res.json())
+            .then(data => {
+                const container = document.getElementById('qr-container');
+
+                data.forEach(id => {
+                    // 1. Create Layout
+                    let card = document.createElement('div');
+                    card.className = 'qr-card';
+                    
+                    let qrDiv = document.createElement('div');
+                    let label = document.createElement('div');
+                    label.className = 'id-label';
+                    label.innerText = "ITEM ID: " + id;
+
+                    card.appendChild(qrDiv);
+                    card.appendChild(label);
+                    container.appendChild(card);
+
+                    // 2. PLUG THE ID TO YOUR LINK
+                    let finalLink = "http://192.168.10.178/user_ims/index.php?id=" + id;
+
+                    // 3. Generate QR
+                    new QRCode(qrDiv, {
+                        text: finalLink,
+                        width: 160,
+                        height: 160,
+                        correctLevel : QRCode.CorrectLevel.H
+                    });
+                });
+            })
+            .catch(err => console.error("Error:", err));
+    </script>
+</body>
+</html>

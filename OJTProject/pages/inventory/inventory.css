@@ -1,0 +1,153 @@
+.inventory-container {
+  margin: 30px auto;
+  width: 95%;
+  max-width: 1800px;
+  background: var(--inv-main-bg);
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+  border: 1px solid var(--inv-border);
+}
+
+.inv-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 25px;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  background: var(--inv-search-bg);
+  padding: 0 15px;
+  border-radius: 20px;
+  border: 1px solid var(--inv-border);
+  width: 250px;
+  height: 38px;
+  margin-bottom: 10px;
+}
+
+.search-box input {
+  border: none;
+  background: transparent;
+  outline: none;
+  padding: 5px 10px;
+  width: 100%;
+  font-size: 14px;
+}
+
+.grand-total-card {
+  background: var(--grand-total-bg);
+  border-left: 4px solid var(--grand-total-border);
+  padding: 15px 20px;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+.grand-total-card .label {
+  display: block;
+  font-size: 10px;
+  font-weight: 800;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.grand-total-card .amount {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--text-dark);
+}
+
+.btn-container {
+  display: flex;
+  gap: 10px;
+}
+
+.excel-btn,
+.opnbtn {
+  height: 40px;
+  padding: 0 15px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  color: white;
+  font-size: 13px;
+}
+
+.excel-btn {
+  background: var(--excel-green);
+}
+
+.opnbtn {
+  background: var(--btn-dark);
+}
+
+#closeBtn,
+button[name="bulkDelete"] {
+  background: var(--danger-red);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+
+@media screen and (max-width: 768px) {
+  
+
+  .inventory-container {
+    width: 100%; 
+    padding: 15px; 
+    margin: 10px auto;
+    border-radius: 0; 
+  }
+
+  
+  .inv-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+  }
+
+ 
+  .search-box {
+    width: 100% !important; 
+    height: 45px; 
+    margin-bottom: 5px;
+    box-sizing: border-box;
+  }
+
+  .search-box input {
+    font-size: 16px; 
+  }
+ 
+  .grand-total-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .grand-total-card .amount {
+    font-size: 20px; 
+  }
+
+ 
+  .btn-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 8px;
+    width: 100%;
+  }
+
+  
+}

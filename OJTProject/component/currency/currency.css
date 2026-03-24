@@ -1,0 +1,90 @@
+#inner-dollar,
+#inner-yen {
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  min-height: 180px;
+  font-family: "Poppins", sans-serif;
+}
+
+#box-dollar {
+  background: linear-gradient(135deg, #001524 0%, #051937 100%);
+  border: 1px solid rgba(100, 255, 218, 0.2);
+  border-radius: 15px;
+  padding: 20px;
+}
+
+#box-yen {
+  background: linear-gradient(135deg, #001524 0%, #0c1445 100%);
+  border: 1px solid rgba(129, 140, 248, 0.2);
+  border-radius: 15px;
+  padding: 20px;
+}
+
+.box-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.box-header span {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.3);
+  letter-spacing: 1px;
+}
+
+.set-rate {
+  display: flex;
+  gap: 5px;
+}
+
+.set-rate input {
+  width: 60px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  color: #fff;
+  font-size: 0.7rem;
+  padding: 2px 5px;
+  outline: none;
+}
+
+.set-rate button {
+  padding: 2px 8px;
+  border-radius: 4px;
+  border: none;
+  font-size: 0.65rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+#inner-dollar button {
+  background: #64ffda;
+  color: #001524;
+}
+#inner-yen button {
+  background: #818cf8;
+  color: #fff;
+}
+
+#inner-dollar h1 {
+  color: #64ffda;
+  font-size: 2.2rem;
+  margin-top: 30px;
+  font-weight: 600;
+}
+
+#inner-yen h1 {
+  color: #818cf8;
+  font-size: 2.2rem;
+  margin-top: 30px;
+  font-weight: 600;
+}
